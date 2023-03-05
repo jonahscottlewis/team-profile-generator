@@ -14,10 +14,6 @@ describe('Intern', () => {
             const intern = new Intern(exampleIntern);
             expect(intern).toBeInstanceOf(Intern);
         });
-        test("should create new instance of intern class", () => {
-            const intern = new Intern(exampleIntern);
-            expect(intern).toBeInstanceOf(Intern);
-        });
         test("should create new instance of engineer class", () => {
             const intern = new Intern(exampleIntern);
             expect(intern).toEqual({
@@ -35,20 +31,20 @@ describe('Intern', () => {
             expect(intern.getName()).toEqual("Derek");
         });
         test("id should be returned when getId method is called", () => {
-            const intern = new Engineer(exampleIntern);
+            const intern = new Intern(exampleIntern);
             expect(intern.getId()).toEqual(3);
         });
         test("email should be returned when getEmail method is called", () => {
-            const engineer = new Engineer(exampleIntern);
-            expect(engineer.getEmail()).toEqual("derek@mail.com");
+            const intern = new Intern(exampleIntern);
+            expect(intern.getEmail()).toEqual("derek@mail.com");
         });
         test("school should be returned when getSchool method is called", () => {
-            const intern = new Engineer(exampleIntern);
-            expect(intern.getSchool().toEqual("UC Davis"))
+            const intern = new Intern(exampleIntern);
+            expect(intern.getSchool()).toEqual("UC Davis")
         });
         test("intern role should be returned when getRole method is called", () => {
-            const intern = new Engineer(exampleIntern);
-            expect(intern.getRole().toEqual("intern"))
+            const intern = new Intern(exampleIntern);
+            expect(intern.getRole()).toEqual("Intern")
         });
     });
 });

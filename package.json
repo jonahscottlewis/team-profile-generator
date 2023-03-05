@@ -1,15 +1,19 @@
 {
-    "name": "static-site",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-     "start":"node index.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "inquirer": "8.2.4"
-    }
+  "name": "team-profile-generator-10",
+  "version": "1.0.0",
+  "description": "AS A user\r I WANT to generate an index.HTML file that has my teams information displayed on it\r SO THAT that information is accessible for me and others",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.4.3"
   }
+}

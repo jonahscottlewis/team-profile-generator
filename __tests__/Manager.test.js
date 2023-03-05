@@ -1,4 +1,3 @@
-const Employee = require('../lib/Employee');
 const Manager = require('../lib/Manager');
 
 describe('Manager', () => {
@@ -11,7 +10,7 @@ describe('Manager', () => {
     describe("constructor tests", () => {
         test("should construct a new instance of manager class", () => {
             const manager = new Manager(exampleManager);
-            expect(manager).toBeinstanceOf(Manager);
+            expect(manager).toBeInstanceOf(Manager);
         });
         test("should create new instance of manager class", () => {
             const manager = new Manager(exampleManager);
@@ -20,6 +19,7 @@ describe('Manager', () => {
                 id: 4,
                 email: "bob@mail.com",
                 officeNumber: 1,
+                role: "Manager",
             });
         });
     });
@@ -37,12 +37,12 @@ describe('Manager', () => {
             expect(manager.getEmail()).toEqual("bob@mail.com");
         });
         test("office number should be returend when getOfficeNumber method is called", () => {
-            const manager = new Manager(exampleManeger);
-            expect(manager.getOfficeNumber()).toEqual("1");
+            const manager = new Manager(exampleManager);
+            expect(manager.getOfficeNumber()).toEqual(1);
         });
         test("intern role should be returned when getRole method is called", () => {
             const manager = new Manager(exampleManager);
-            expect(manager.getRole().toEqual("manager"))
+            expect(manager.getRole()).toEqual("Manager");
         });
     });
 });

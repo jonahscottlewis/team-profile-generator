@@ -11,7 +11,7 @@ describe('Engineer', () => {
     describe("constructor tests", () => {
         test("should construct a new instance of engineer class", () => {
             const engineer = new Engineer(exampleEngineer);
-            expect(engineer).tobeInstanceOf(Engineer);
+            expect(engineer).toBeInstanceOf(Engineer);
         });
         test("should create new instance of engineer class", () => {
             const engineer = new Engineer(exampleEngineer);
@@ -39,11 +39,11 @@ describe('Engineer', () => {
         });
         test("GitHub URL should be returned when getGitHub method is called", () => {
             const engineer = new Engineer(exampleEngineer);
-            expect(engineer.getGithub().toEqual("github.com/kyle"))
+            expect(engineer.getGithub()).toEqual("github.com/kyle")
         });
         test("engineer role should be returned when getRole method is called", () => {
             const engineer = new Engineer(exampleEngineer);
-            expect(engineer.getRole().toEqual("Engineer"))
+            expect(engineer.getRole()).toEqual("Engineer")
         });
     });
 });
