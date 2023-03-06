@@ -3,7 +3,6 @@ const fs = require('fs')
 const generateHTML = require("./generateHTML");
 
 // Importing all classes
-const Employee = require('./lib/Employee');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
@@ -15,7 +14,7 @@ let isTeamComplete = false;
 
 const validateInput = (userInput) => {
     if (userInput === "") {
-        return "please give an anser to proceed";
+        return "please give an answer to proceed";
     } else {
         return true;
     }
@@ -31,15 +30,15 @@ const init = async () => {
                 message: "Please select employee type",
                 name: "employeeType",
                 choices: [
-                    { name: "Engineer", value: "engineer", short: "Engineer" },
-                    { name: "Intern", value: "Intern", short: "None" },
-                    { name: "None", value: "None", short: "None" },
+                    { name: "Engineer", value: "Engineer", short: "Engineer" },
+                    { name: "Intern", value: "Intern", short: "Intern" },
+                    { name: "Manager", value: "Manager", short: "Manager" },
                 ],
 
             }
         ]
 
-        const { employeeType } = await inquirer.createPromptModule(employeeQuestion);
+        const { employeeType } = await inquirer.prompt(employeeQuestion);
 
         if (employeeType === "none") {
             isTeamComplete = true;
@@ -102,7 +101,7 @@ const createManager = async () =>{
     ];
 
 
-    const managerAnswers = await inquirer.createPromptModule(managerQuestions);
+    const managerAnswers = await inquirer.prompt(managerQuestions);
 
     const manager = new Manager(managerAnswers);
 
