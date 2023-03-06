@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,13 @@
     <title>Document</title>
 </head>
 <style>
-    body{
+    body {
         display: flex;
         flex-wrap: wrap;
         background-color: paleturquoise;
     }
 
-    header{
+    header {
         text-align: center;
         background-color: firebrick;
     }
@@ -23,22 +24,46 @@
         margin: 40px;
     }
 
-    .card{
+    .card {
         display: inline-flex;
         text-align: center;
         width: 400px;
         height: 450px;
         background-color: firebrick;
     }
-
 </style>
+
 <body>
     <header>
         <h1>Team Profiles</h1>
     </header>
     <div class="cardBox">
+        <div class="card">
+            <h5>Name:${this.name}</h5>
+            <h5>ID:${this.id}</h5>
+            <h5>E-mail:<a href="mailto:${this.email}">${this.email}</a></h5>
+            <h5>Office Number:${this.officeNumber}</h5>
+            <h5>Role:${this.role}</h5>
+        </div>
 
-    </div>
-    
+        <div class="card">
+            <div>
+                <h5>Name:${this.name}</h5>
+                <h5>ID:${this.id}</h5>
+                <h5>E-mail:<a href="mailto:${this.email}">${this.email}</a></h5>
+                <h5>GitHub:<a target="_blank" href="https://githuub.com/${this.github}"></a></h5>
+                <h5>Role:${this.role}</h5>
+            </div>
+
+            <div class="card">
+                <h5>Name:${this.name}</h5>
+                <h5>ID:${this.id}</h5>
+                <h5>E-mail:<a href="mailto:${this.email}">${this.email}</a></h5>
+                <h5>School:${this.school}</h5>
+                <h5>Role:${this.role}</h5>
+            </div>
+        </div>
+
 </body>
+
 </html>

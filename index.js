@@ -2,12 +2,10 @@ const inquirer = require('inquirer')
 const fs = require('fs')
 const generateHTML = require("./generateHTML");
 
-// Importing all classes
-const Intern = require('./lib/Intern');
-const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
-// Declare employees as an empty array to be filled with user input
 const employees = [];
 
 let isTeamComplete = false;
@@ -38,7 +36,7 @@ const init = async () => {
             }
         ]
 
-        const { employeeType } = await inquirer.prompt(employeeQuestion);
+        const {employeeType} = await inquirer.prompt(employeeQuestion);
 
         if (employeeType === "none") {
             isTeamComplete = true;

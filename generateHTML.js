@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const templatesDir = path.resolve(__filename,"");
+const templatesDir = path.resolve(__dirname,"../Templates");
 
 const generateHTML = (employees) => {
     const HTML = [];
@@ -34,7 +34,7 @@ const renderManager = (manager) =>{
     template = replaceTemplate(template, "id", manager.getId());
     template = replaceTemplate(template, "role", manager.getRole());
     template = replaceTemplate(template, "email", manager.getEmail());
-    template = replaceTemplate(template, "officeNumber", manager.getOfficeumber());
+    template = replaceTemplate(template, "officeNumber", manager.getOfficeNumber());
 
     return template;
 };
