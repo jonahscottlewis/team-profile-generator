@@ -30,12 +30,12 @@ const renderManager = (manager) =>{
         "utf8"
     );
 
+    template = replaceTemplates(template, "this.role", manager.getRole());
     template = replaceTemplates(template, "this.name", manager.getName());
     template = replaceTemplates(template, "this.id", manager.getId());
-    template = replaceTemplates(template, "this.role", manager.getRole());
-    template = replaceTemplates(template, "this.email", manager.getEmail());
     template = replaceTemplates(template, "this.officeNumber", manager.getOfficeNumber());
-    console.log(template)
+    template = replaceTemplates(template, "this.email", manager.getEmail());
+
     return template;
 };
 
@@ -45,11 +45,11 @@ const renderEngineer = (engineer) =>{
         "utf8"
     );
 
+    template = replaceTemplates(template, "this.role", engineer.getRole());
     template = replaceTemplates(template, "this.name", engineer.getName());
     template = replaceTemplates(template, "this.id", engineer.getId());
-    template = replaceTemplates(template, "this.role", engineer.getRole());
-    template = replaceTemplates(template, "this.email", engineer.getEmail());
     template = replaceTemplates(template, "this.github", engineer.getGitHub());
+    template = replaceTemplates(template, "this.email", engineer.getEmail());
 
     return template;
 };
@@ -59,14 +59,13 @@ const renderIntern = (intern) =>{
         path.resolve(templatesDir, "intern.html"),
         "utf8"
     );
-    console.log("template \n \n", template)
 
+    template = replaceTemplates(template, "this.role", intern.getRole());
     template = replaceTemplates(template, "this.name", intern.getName());
     template = replaceTemplates(template, "this.id", intern.getId());
-    template = replaceTemplates(template, "this.role", intern.getRole());
-    template = replaceTemplates(template, "this.email", intern.getEmail());
     template = replaceTemplates(template, "this.school", intern.getSchool());
-
+    template = replaceTemplates(template, "this.email", intern.getEmail());
+    
     return template;
 };
 

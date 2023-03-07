@@ -1,7 +1,6 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 const generateHTML = require("./generateHTML");
-
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -129,16 +128,17 @@ const createEngineer = async () => {
         },
         {
             type: "input",
-            message: "Enter email",
-            name: "email",
+            message: "Enter engineer GitHub URL",
+            name: "github",
             validate: validateInput,
         },
         {
             type: "input",
-            message: "Enter engineer GitHub URL",
-            name: "github",
+            message: "Enter email",
+            name: "email",
             validate: validateInput,
         }
+        
     ];
 
     const engineerAnswers = await inquirer.prompt(engineerQuestions);
@@ -166,16 +166,17 @@ const createIntern = async () => {
         },
         {
             type: "input",
-            message: "Enter intern e-mail",
-            name: "email",
-            validate: validateInput,
-        },
-        {
-            type: "input",
             message: "Enter intern school",
             name: "scohool",
             vallidate: validateInput,
         },
+        {
+            type: "input",
+            message: "Enter intern e-mail",
+            name: "email",
+            validate: validateInput,
+        }
+        
     ];
 
     const internAnswers = await inquirer.prompt(internQuestions);
