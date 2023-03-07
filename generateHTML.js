@@ -59,6 +59,7 @@ const renderIntern = (intern) =>{
         path.resolve(templatesDir, "intern.html"),
         "utf8"
     );
+    console.log("template \n \n", template)
 
     template = replaceTemplates(template, "this.name", intern.getName());
     template = replaceTemplates(template, "this.id", intern.getId());
@@ -82,6 +83,7 @@ const renderFullMarkdown = (HTML) => {
 const replaceTemplates = (template, placeholder, value) => {
     // const pattern = new RegExp(`{{${placeholder}}}`, "gm");
     let result = template.replace(placeholder, value);
+    console.log(result)
     // console.log(result)
     return result;
 };
