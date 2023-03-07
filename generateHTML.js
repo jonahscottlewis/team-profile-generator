@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const templatesDir = path.resolve(__dirname,"../Templates");
+const templatesDir = path.resolve(__dirname,"./Templates");
 
 const generateHTML = (employees) => {
     const HTML = [];
@@ -30,12 +30,12 @@ const renderManager = (manager) =>{
         "utf8"
     );
 
-    template = replaceTemplates(template, "name", manager.getName());
-    template = replaceTemplate(template, "id", manager.getId());
-    template = replaceTemplate(template, "role", manager.getRole());
-    template = replaceTemplate(template, "email", manager.getEmail());
-    template = replaceTemplate(template, "officeNumber", manager.getOfficeNumber());
-
+    template = replaceTemplates(template, "this.name", manager.getName());
+    template = replaceTemplates(template, "this.id", manager.getId());
+    template = replaceTemplates(template, "this.role", manager.getRole());
+    template = replaceTemplates(template, "this.email", manager.getEmail());
+    template = replaceTemplates(template, "this.officeNumber", manager.getOfficeNumber());
+    console.log(template)
     return template;
 };
 
@@ -45,11 +45,11 @@ const renderEngineer = (engineer) =>{
         "utf8"
     );
 
-    template = replaceTemplates(template, "name", engineer.getName());
-    template = replaceTemplate(template, "id", engineer.getId());
-    template = replaceTemplate(template, "role", engineer.getRole());
-    template = replaceTemplate(template, "email", engineer.getEmail());
-    template = replaceTemplate(template, "github", engineer.getGitHub());
+    template = replaceTemplates(template, "this.name", engineer.getName());
+    template = replaceTemplates(template, "this.id", engineer.getId());
+    template = replaceTemplates(template, "this.role", engineer.getRole());
+    template = replaceTemplates(template, "this.email", engineer.getEmail());
+    template = replaceTemplates(template, "this.github", engineer.getGitHub());
 
     return template;
 };
@@ -60,11 +60,11 @@ const renderIntern = (intern) =>{
         "utf8"
     );
 
-    template = replaceTemplates(template, "name", intern.getName());
-    template = replaceTemplate(template, "id", intern.getId());
-    template = replaceTemplate(template, "role", intern.getRole());
-    template = replaceTemplate(template, "email", intern.getEmail());
-    template = replaceTemplate(template, "school", intern.getSchool());
+    template = replaceTemplates(template, "this.name", intern.getName());
+    template = replaceTemplates(template, "this.id", intern.getId());
+    template = replaceTemplates(template, "this.role", intern.getRole());
+    template = replaceTemplates(template, "this.email", intern.getEmail());
+    template = replaceTemplates(template, "this.school", intern.getSchool());
 
     return template;
 };
@@ -80,9 +80,10 @@ const renderFullMarkdown = (HTML) => {
 };
 
 const replaceTemplates = (template, placeholder, value) => {
-    const pattern = new RegExp(`{{${placeholder}}}`, "gm");
-
-    return template.replace(pattern, value);
+    // const pattern = new RegExp(`{{${placeholder}}}`, "gm");
+    let result = template.replace(placeholder, value);
+    // console.log(result)
+    return result;
 };
 
 module.exports = generateHTML;

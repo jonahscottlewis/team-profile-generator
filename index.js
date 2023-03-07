@@ -31,6 +31,7 @@ const init = async () => {
                     { name: "Engineer", value: "Engineer", short: "Engineer" },
                     { name: "Intern", value: "Intern", short: "Intern" },
                     { name: "Manager", value: "Manager", short: "Manager" },
+                    {name: "none", value: "none", short: "none"}
                 ],
 
             }
@@ -43,10 +44,14 @@ const init = async () => {
 
 
         } else {
-            if (employeeType === "engineer") {
+            console.log('user did not choose "none"')
+            console.log(employeeType)
+            if (employeeType === "Engineer") {
+                console.log('user chose "eng"')
                 await createEngineer();
             }
-            if (employeeType === "intern") {
+            if (employeeType === "Intern") {
+                console.log('user chose "int"')
                 await createIntern();
             }
         }
@@ -55,7 +60,7 @@ const init = async () => {
 
 // The employees array is passed into the generate html function and then this markdown is used to create a new team-profile.html
     const HTML = generateHTML(employees);
-    fswriteFileSync("team-profile.html",HTML, (err) => {
+    fs.writeFileSync("team-profile.html",HTML, (err) => {
         // Errors are caught
         if(err){
             console.log(err);
