@@ -84,7 +84,7 @@ const createManager = async () =>{
         {
             type: "input",
             message: "Enter employee ID number",
-            name: "ID",
+            name: "id",
             validate: validateInput,
         },
         {
@@ -123,12 +123,12 @@ const createEngineer = async () => {
         {
             type: "input",
             message: "Enter engineer ID number",
-            name:"ID",
+            name:"id",
             validate: validateInput,
         },
         {
             type: "input",
-            message: "Enter engineer GitHub URL",
+            message: "Enter engineer GitHub username",
             name: "github",
             validate: validateInput,
         },
@@ -161,13 +161,13 @@ const createIntern = async () => {
         {
             type: "input",
             message: "enter intern ID number",
-            name: "ID",
+            name: "id",
             validate: validateInput,
         },
         {
             type: "input",
             message: "Enter intern school",
-            name: "scohool",
+            name: "school",
             vallidate: validateInput,
         },
         {

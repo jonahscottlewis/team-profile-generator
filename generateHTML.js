@@ -81,7 +81,7 @@ const renderFullMarkdown = (HTML) => {
 
 const replaceTemplates = (template, placeholder, value) => {
     // const pattern = new RegExp(`{{${placeholder}}}`, "gm");
-    let result = template.replace(placeholder, value);
+    let result = template.replaceAll(placeholder, value);
     console.log(result)
     // console.log(result)
     return result;
