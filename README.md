@@ -14,3 +14,9 @@ Team Profile Generator is an application that will generate an index.HTML file w
 ## Installation
 
 inquirer 8.2.4 is required to be downlaoded in order to run this application.
+
+## GitHub 
+
+https://github.com/jonahscottlewis/team-profile-generator-10
+
+[alt text](./Image/Team%20Profile%20Generator%20screenshot.png)

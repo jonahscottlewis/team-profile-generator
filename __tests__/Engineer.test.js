@@ -39,7 +39,7 @@ describe('Engineer', () => {
         });
         test("GitHub URL should be returned when getGitHub method is called", () => {
             const engineer = new Engineer(exampleEngineer);
-            expect(engineer.getGithub()).toEqual("github.com/kyle")
+            expect(engineer.getGitHub()).toEqual("github.com/kyle")
         });
         test("engineer role should be returned when getRole method is called", () => {
             const engineer = new Engineer(exampleEngineer);
